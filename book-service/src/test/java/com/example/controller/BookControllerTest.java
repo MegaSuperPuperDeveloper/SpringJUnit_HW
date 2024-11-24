@@ -125,12 +125,4 @@ public class BookControllerTest extends JUnitSpringBootBase {
         Assertions.assertEquals(book2.getAuthor(), book1.getAuthor());
     }
 
-    @Test
-    void testUpdateTitleByIdSuccess() {
-        Book book1 = new Book("title1", "author1");
-        repository.save(book1);
-
-
-    }
-
 }
