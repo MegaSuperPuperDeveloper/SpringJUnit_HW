@@ -96,6 +96,8 @@ public class ReaderController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    // The addBooksById method checks if the book exists. If it does, it retrieves the reader and adds the book to their collection.
+    // It then updates the reader's list and marks the book as given out. If the book is not found, it returns a 404 Not Found response.
     @PatchMapping("/{idReader}/{idBook}/get")
     public ResponseEntity<Optional<Reader>> addBooksById(@PathVariable Long idBook, @PathVariable Long idReader) {
 
@@ -115,6 +117,9 @@ public class ReaderController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    // The giveBooksById method checks if the specified book exists. If it does, it retrieves the reader and their list of books.
+    // If the book is already in the reader's collection, it removes it, updates the reader’s book list, and marks the book as available.
+    // If the book isn't found or there's an issue, it returns a 404 Not Found response.
     @PatchMapping("/{idReader}/{idBook}/give")
     public ResponseEntity<Optional<Reader>> giveBooksById(@PathVariable Long idBook, @PathVariable Long idReader) {
 

@@ -23,4 +23,7 @@ public interface ReaderRepository extends JpaRepository<Reader, Long> {
     @Query("UPDATE Reader a SET a.password = a.password WHERE a.id = :id")
     void updatePasswordById(Long id, String password);
 
+    @Query("SELECT a FROM Reader a WHERE a.name = :name")
+    Reader findByName(String name);
+
 }
